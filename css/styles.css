@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@400;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -16,19 +17,36 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: "Poppins", sans-serif;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   padding: 2rem;
-  flex-direction: column;
 }
-header p {
-  width: 30%;
-  padding-top: 1rem;
-  width: 80%;
+@media (max-width: 750px) {
+  header {
+    display: block;
+  }
 }
+header h1 {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+}
+header .about-us {
+  margin-left: auto;
+}
+header .about-us h3 {
+  font-weight: 600;
+}
+@media (max-width: 750px) {
+  header .about-us {
+    padding-top: 1rem;
+    margin-left: 0;
+  }
+}
+
 ul {
   margin-top: 5rem;
   display: grid;
@@ -39,6 +57,7 @@ ul {
   ul {
     gap: 2rem;
     padding: 2rem;
+    margin-top: 2rem;
   }
 }
 @media (max-width: 750px) {
@@ -48,6 +67,9 @@ ul {
   ul li.item:nth-child(2n+2) {
     padding-top: 6rem;
   }
+}
+ul li {
+  font-weight: 600;
 }
 ul li:nth-child(3n+2) {
   padding-top: 6rem;
@@ -64,7 +86,13 @@ figure {
 figure figcaption {
   transform: rotate(90deg);
   height: 20px;
-  margin-top: 0.5rem;
+  margin-left: 1rem;
+  transform-origin: top left;
+  font-family: "PT Serif", serif;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 400;
 }
 
 img {
@@ -74,6 +102,12 @@ img {
 footer.section {
   margin-top: auto;
   text-align: center;
+  margin-top: 5rem;
+  color: #777;
+  font-family: "PT Serif", serif;
+  font-size: 12px;
+  padding-bottom: 1rem;
+  letter-spacing: 0.05rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,5 +1,10 @@
 @use 'mixins'
 
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@400;600&display=swap')
+
+// font-family: 'Poppins', sans-serif
+// font-family: 'PT Serif', serif
+
 *
     margin: 0
     padding: 0
@@ -16,23 +21,29 @@ body
     height: 100vh
     display: flex
     flex-direction: column
+    font-family: 'Poppins', sans-serif
 
 header
-    display: flex
-    justify-content: space-between
-
-    @include mixins.mobile
+    display: grid
+    grid-template-columns: 1fr 1fr
     padding: 2rem
 
     @include mixins.mobile750
-    flex-direction: column
+        display: block
 
-    p
-        width: 30%
+    h1
+        font-family: 'PT Serif', serif
+        font-weight: 700
+
+    .about-us
+        margin-left: auto
+
+        h3
+            font-weight: 600
 
         @include mixins.mobile750
-        padding-top: 1rem
-        width: 80%
+            padding-top: 1rem
+            margin-left: 0
 
 ul
     margin-top: 5rem
@@ -43,6 +54,7 @@ ul
     @include mixins.mobile
         gap: 2rem
         padding: 2rem
+        margin-top: 2rem
     
     @include mixins.mobile750
         grid-template-columns: repeat(2, 1fr)
@@ -50,12 +62,14 @@ ul
         li.item:nth-child(2n+2)
             padding-top: 6rem
 
+    li
+        font-weight: 600
+
     li:nth-child(3n+2)
         padding-top: 6rem
 
         @include mixins.mobile750
             padding-top: 0
-
 
 figure
     display: flex
@@ -63,7 +77,13 @@ figure
     figcaption
         transform: rotate(90deg)
         height: 20px 
-        margin-top: .5rem  
+        margin-left: 1rem 
+        transform-origin: top left
+        font-family: 'PT Serif', serif
+        font-size: .6rem
+        text-transform: uppercase
+        white-space: nowrap
+        font-weight: 400
         
 img
     width: 100%
@@ -71,3 +91,9 @@ img
 footer.section
     margin-top: auto
     text-align: center
+    margin-top: 5rem
+    color: #777
+    font-family: 'PT Serif', serif
+    font-size: 12px
+    padding-bottom: 1rem
+    letter-spacing: .05rem
